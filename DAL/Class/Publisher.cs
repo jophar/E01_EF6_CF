@@ -7,16 +7,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DAL
 {
-    class Publisher
+    public class Publisher
     {
-        internal int PublisherId { get; set; }
+        public int PublisherID { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "Max 100 chars.")]
         [MaxLength(100)]
-        internal string PublisherName { get; set; }
+        public string PublisherName { get; set; }
 
-        protected static void InsertPublisher(Publisher p)
+        public static void InsertPublisher(Publisher p)
         {
             int i = 0;
 
@@ -36,7 +36,7 @@ namespace DAL
         {
             using (var db = new BookContext())
             {
-                return db.Publisher.Select(a => a.PublisherName).Equals(p.PublisherName);
+                return db.Publisher.Select(a => a).Where(b => b.PublisherName.Equals(p.PublisherName)).Any();
             }
         }
     }

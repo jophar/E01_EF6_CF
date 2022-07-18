@@ -39,6 +39,7 @@
     <Compile Include="Class\Publisher.cs" />
     <Compile Include="Class\Utilities.cs" />
     <Compile Include="DBContext\BookContext.cs" />
+    <Compile Include="Model1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

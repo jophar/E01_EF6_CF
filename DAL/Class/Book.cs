@@ -7,40 +7,36 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DAL
 {
-    class Book
+    public class Book
     {
-        internal int BookId { get; set; }
+        public int BookID { get; set; }
 
         [Required]
         [StringLength (100, ErrorMessage ="Max 100 chars.")]
         [MaxLength (100)]
-        internal string BookTitle { get; set; }
+        public string BookTitle { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "Max 100 chars.")]
         [MaxLength(100)]
-        internal string BookAuthor { get; set; }
+        public string BookAuthor { get; set; }
 
         [Required]
         [StringLength(13, ErrorMessage = "Max 100 chars.")]
         [MaxLength(13)]
-        internal string BookIsbn { get; set; }
+        public string BookIsbn { get; set; }
 
-        internal DateTime BookReleaseDate { get; set; }
+        public DateTime? BookReleaseDate { get; set; }
 
-        internal int BookPublisherId { get; set; }
+        public int BookPublisherID { get; set; }
 
-        protected static void InsertBook(Book b)
+        public static void InsertBook(Book b)
         {
             int i = 0;
 
-            Publisher p = new Publisher();
-
             using (var db = new BookContext())
             {
-                p = db.Publisher.Select(x => x).Where(z => z.PublisherId == b.BookPublisherId).First();
-
-                if (Publisher.ValidateExistingPublisher(p))
+                if (b.BookPublisherID != 0)
                 {
                     db.Book.Add(b);
                     i = db.SaveChanges();

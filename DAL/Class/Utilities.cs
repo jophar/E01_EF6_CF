@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    internal class Utilities
+    public class Utilities
     {
-        internal List<string> _mainMenu = new List<string>()
+        public List<string> _mainMenu = new List<string>()
         {
-
+            "** BOOK'S DB *************\n",
+            "1) Add a Publisher\n",
+            "2) Add a Book\n"
         };
-        internal static Publisher SavePublisherToObject()
+        public static Publisher SavePublisherToObject()
         {
             Publisher p = new Publisher();
             Console.Write("Insert publisher's name: ");
@@ -21,7 +23,14 @@ namespace DAL
             return p;
         }
 
-        internal static Book SaveBookToObject()
+        public static void PrintMenus(List<string> l)
+        {
+            foreach (string menu in l)
+            { 
+                Console.Write(menu);
+            }
+        }
+        public static Book SaveBookToObject()
         {
             Book book = new Book();
 
@@ -35,10 +44,15 @@ namespace DAL
             int y = Int32.Parse(Console.ReadLine());
             Console.Write("Insert book's month release date: ");
             int m = Int32.Parse(Console.ReadLine());
-            book.BookReleaseDate = new DateTime(y, m, 1);
+
+            if(y > 0 && m > 0)
+                book.BookReleaseDate = new DateTime(y, m, 1);
+            else
+                book.BookReleaseDate = null;
+
             Console.Write("Insert book's publisher name: ");
             string pName = Console.ReadLine();
-            book.BookPublisherId = GetPublisherIdByName(pName);
+            book.BookPublisherID = GetPublisherIdByName(pName);
 
             return book;
         }
@@ -53,9 +67,10 @@ namespace DAL
         {
             using(var db = new BookContext())
             {
-                Publisher temp = new Publisher();
-                temp = db.Publisher.Select(p => p).Where(p => p.PublisherName.Equals(name)).First();
-                return temp.PublisherId;
+                if (db.Publisher.Any(c => c.PublisherName.Equals(name)))
+                    return db.Publisher.First(c => c.PublisherName.Equals(name)).PublisherID;
+                else
+                    return 0;
             }
         }
     }
