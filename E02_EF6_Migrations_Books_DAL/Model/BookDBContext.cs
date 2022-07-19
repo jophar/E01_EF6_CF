@@ -20,7 +20,8 @@ namespace E02_EF6_Migrations_Books_DAL
 
         public DbSet<Publisher> Publisher { get; set; }
         public DbSet<Book> Book { get; set; }
-        public DbSet<DeweyDecimalClassification> Ddc { get; set; }
+        public DbSet<DeweyDecimalClassification> DeweyDecimalClassification { get; set; }
+        public DbSet<Author> Author { get; set; }
 
     }
 }

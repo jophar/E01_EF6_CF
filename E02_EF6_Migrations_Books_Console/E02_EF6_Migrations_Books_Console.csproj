@@ -51,6 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BooksDBClient.cs" />
+    <Compile Include="Class\BookCrud.cs" />
+    <Compile Include="Class\PublisherCrud.cs" />
+    <Compile Include="CrudOperations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

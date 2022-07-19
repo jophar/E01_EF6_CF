@@ -32,7 +32,8 @@ namespace E02_EF6_Migrations_Books_Console
             {
                 PublisherID = 1,
                 Titulo = "New book",
-                ISBN = "123456789"
+                ISBN = "123456789",
+                DeweyID = 1
             };
 
             using (var context = new BookDBContext())

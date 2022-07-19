@@ -13,7 +13,7 @@ namespace E02_EF6_Migrations_Books_DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202207191923349_M03Book_New_Table"; }
+            get { return "202207192030142_M03Book_New_Table"; }
         }
         
         string IMigrationMetadata.Source

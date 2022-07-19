@@ -27,7 +27,7 @@ namespace E02_EF6_Migrations_Books_DAL.Migrations
             //    );
             //
 
-            context.Ddc.AddOrUpdate(p=>p.DeweyID,
+            context.DeweyDecimalClassification.AddOrUpdate(p=>p.DeweyID,
                 new DeweyDecimalClassification { DeweyID = 1, DdcCode = "000", DDC = "Computer science, information and general works" },
                 new DeweyDecimalClassification { DeweyID = 2, DdcCode = "100", DDC = "Philosophy and psychology" },
                 new DeweyDecimalClassification { DeweyID = 3, DdcCode = "200", DDC = "Religion" }

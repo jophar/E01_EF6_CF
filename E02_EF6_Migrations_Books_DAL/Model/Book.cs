@@ -14,6 +14,7 @@ namespace E02_EF6_Migrations_Books_DAL
 
         // Foreign key, without data annotation, just using code conventions 
         public int PublisherID { get; set; }
+        public int DeweyID { get; set; } // Dewey Decimal Classification
 
         [Required]
         [StringLength(9, ErrorMessage = "9 character limit.")]
@@ -24,16 +25,16 @@ namespace E02_EF6_Migrations_Books_DAL
         [StringLength(100, ErrorMessage = "100 character limit.")]
         [MaxLength(100)]
         public string Titulo { get; set; }
-
-        [Required]
-        public int DdcID { get; set; } // Dewey Decimal Classification
+       
         #endregion
 
         #region Navigation properties 
-        // 1 book - n publishers 
+        // 1 book - 1 publisher 
         public Publisher Publisher { get; set; }
-
-        public DeweyDecimalClassification Ddc { get; set; }
+        // 1 book - 1 classification
+        public DeweyDecimalClassification DeweyDecimalClassification { get; set; }
+        // 1 book - n authors
+        public ICollection<Author> Author { get; set; }
         #endregion
     }
 }

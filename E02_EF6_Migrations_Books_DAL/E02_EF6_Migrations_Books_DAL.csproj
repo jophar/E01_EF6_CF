@@ -48,19 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202207182119111_M01Initial.cs" />
-    <Compile Include="Migrations\202207182119111_M01Initial.Designer.cs">
-      <DependentUpon>202207182119111_M01Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202207191811098_M02Book_UpField_DDC.cs" />
-    <Compile Include="Migrations\202207191811098_M02Book_UpField_DDC.Designer.cs">
-      <DependentUpon>202207191811098_M02Book_UpField_DDC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202207191923349_M03Book_New_Table.cs" />
-    <Compile Include="Migrations\202207191923349_M03Book_New_Table.Designer.cs">
-      <DependentUpon>202207191923349_M03Book_New_Table.cs</DependentUpon>
+    <Compile Include="Migrations\202207192030142_M03Book_New_Table.cs" />
+    <Compile Include="Migrations\202207192030142_M03Book_New_Table.Designer.cs">
+      <DependentUpon>202207192030142_M03Book_New_Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Author.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\DeweyDecimalClassification.cs" />
     <Compile Include="Model\Publisher.cs" />
@@ -72,14 +65,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202207182119111_M01Initial.resx">
-      <DependentUpon>202207182119111_M01Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207191811098_M02Book_UpField_DDC.resx">
-      <DependentUpon>202207191811098_M02Book_UpField_DDC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202207191923349_M03Book_New_Table.resx">
-      <DependentUpon>202207191923349_M03Book_New_Table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202207192030142_M03Book_New_Table.resx">
+      <DependentUpon>202207192030142_M03Book_New_Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
