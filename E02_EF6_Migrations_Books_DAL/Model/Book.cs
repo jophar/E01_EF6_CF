@@ -26,16 +26,14 @@ namespace E02_EF6_Migrations_Books_DAL
         public string Titulo { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "100 character limit.")]
-        [MaxLength(100)]
         public int DdcID { get; set; } // Dewey Decimal Classification
         #endregion
 
         #region Navigation properties 
         // 1 book - n publishers 
         public Publisher Publisher { get; set; }
-        public DeweyDecimalClassification Ddc { get; set; }
 
+        public DeweyDecimalClassification Ddc { get; set; }
         #endregion
     }
 }

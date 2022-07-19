@@ -56,6 +56,10 @@
     <Compile Include="Migrations\202207191811098_M02Book_UpField_DDC.Designer.cs">
       <DependentUpon>202207191811098_M02Book_UpField_DDC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207191923349_M03Book_New_Table.cs" />
+    <Compile Include="Migrations\202207191923349_M03Book_New_Table.Designer.cs">
+      <DependentUpon>202207191923349_M03Book_New_Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\DeweyDecimalClassification.cs" />
@@ -73,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207191811098_M02Book_UpField_DDC.resx">
       <DependentUpon>202207191811098_M02Book_UpField_DDC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207191923349_M03Book_New_Table.resx">
+      <DependentUpon>202207191923349_M03Book_New_Table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
